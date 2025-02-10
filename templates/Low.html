@@ -1,54 +1,76 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
-=======
- <!DOCTYPE html>
->>>>>>> a11790eed7f625719cfc0e61eaf34493142b95dd
-<html>
-
-
-    <head>
-        <title>Health Care</title>
-        <link rel="stylesheet" type="text/css" href="yle.css">
-        <h1 align="center" style="color: green;">LOW RISK :))</h1>
-    </head>
-
-    {% csrf_token %}
-    <body>
-        <div class="heading">
-            
-        </div>
-        
-        <div class="cover">
-             
-            <div class="box">
-            <img src="https://medicalarrow.com/wp-content/uploads/2018/09/Fetal-Maternal-Health.jpg">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Care</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+        .heading {
+            padding: 20px;
+            background-color: #35dc59;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .cover {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px;
+        }
+        .box {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .box:hover {
+            transform: scale(1.05);
+        }
+        .box img {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+        }
+        h2 {
+            color: #007bff;
+            margin-top: 10px;
+        }
+        p {
+            color: #555;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="heading"> LOW RISK: YOU ARE SAFE!</div>
+    <div class="cover">
+        <div class="box">
+            <img src="https://medicalarrow.com/wp-content/uploads/2018/09/Fetal-Maternal-Health.jpg" alt="Caution">
             <h2>Be Cautious</h2>
-            <p>Prioritize regular prenatal check-ups for monitoring health.
-                Maintain a balanced diet and stay hydrated.
-                Exercise cautiously after consulting healthcare professionals.
-                </p>
-            </div>
-            <div class="box">
-            <img src="https://www.vermontvisitingnurses.org/wp-content/uploads/2017/11/VNA-Maternal-Child-Health-Program-Vermont.jpg">
-            <h2>Stay Positive</h2>
-            <p>Cultivate a positive mindset during pregnancy for emotional well-being.
-                Focus on the joy of motherhood and bonding with the baby.
-                Surround yourself with a supportive network of friends and family.
-                </p>
-            </div>
-            <div class="box">
-            <img src="https://cdn.shopify.com/s/files/1/0460/4221/8664/articles/similes_1.png?v=1674137123">
-            <h2>Healthy Diet</h2>
-            <p>Prioritize a diverse diet rich in fruits, vegetables, and whole grains for essential nutrients.
-                Ensure an adequate intake of calcium and iron for bone health and blood production.
-                Include lean proteins like poultry, fish, and legumes to support muscle and tissue development.
-                </p>
-            </div>
+            <p>Prioritize regular prenatal check-ups, maintain a balanced diet, and exercise cautiously.</p>
         </div>
-
-    </body>
-<<<<<<< HEAD
+        <div class="box">
+            <img src="https://www.vermontvisitingnurses.org/wp-content/uploads/2017/11/VNA-Maternal-Child-Health-Program-Vermont.jpg" alt="Stay Positive">
+            <h2>Stay Positive</h2>
+            <p>Cultivate a positive mindset, focus on joy, and build a strong support network.</p>
+        </div>
+        <div class="box">
+            <img src="https://cdn.shopify.com/s/files/1/0460/4221/8664/articles/similes_1.png?v=1674137123" alt="Healthy Diet">
+            <h2>Healthy Diet</h2>
+            <p>Eat a diverse diet with fruits, vegetables, lean proteins, and essential nutrients.</p>
+        </div>
+    </div>
+</body>
 </html>
-=======
-</html>
->>>>>>> a11790eed7f625719cfc0e61eaf34493142b95dd

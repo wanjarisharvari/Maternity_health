@@ -1,100 +1,103 @@
 <!DOCTYPE html>
 <html>
 <head>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
    <style>
       body {
-         font-family: Arial, Helvetica, sans-serif;
+         font-family: 'Poppins', sans-serif;
+         background-color: #f7f7f7;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: 100vh;
+         margin: 0;
       }
-      h1{
+      .container {
+         background: white;
+         max-width: 400px;
+         width: 90%;
+         padding: 25px;
+         border-radius: 12px;
+         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
          text-align: center;
       }
-      * {
-         box-sizing: border-box;
+      h1 {
+         font-size: 22px;
+         margin-bottom: 15px;
+         color: #333;
       }
-      form {
-         padding: 16px;
-         max-width: 800px;
-         margin-left: 20%;
-         background-color: rgb(255, 254, 195);
-      }
-      input[type=text], input[type=password] {
+      input[type=number] {
          width: 100%;
-         padding: 15px;
-         margin: 5px 0 22px 0;
-         display: inline-block;
-         border: none;
-         background: #f1f1f1;
+         padding: 12px;
+         margin: 8px 0;
+         border: 1px solid #ddd;
+         border-radius: 8px;
+         font-size: 14px;
+         background: #f9f9f9;
+         transition: 0.3s;
       }
-      input[type=text]:focus, input[type=password]:focus {
-         background-color: #ddd;
+      input[type=number]:focus {
+         border-color: #4CAF50;
          outline: none;
       }
-      hr {
-         border: 1px solid #f1f1f1;
-         margin-bottom: 25px;
-      }
-      .registerbtn {
+      button {
          background-color: #4CAF50;
          color: white;
-         padding: 16px 20px;
-         margin: 8px 0;
+         padding: 12px;
          border: none;
-         cursor: pointer;
+         border-radius: 8px;
          width: 100%;
-         opacity: 0.9;
+         font-size: 16px;
+         cursor: pointer;
+         transition: 0.3s;
       }
-      .registerbtn:hover {
-         opacity: 1;
+      button:hover {
+         background-color: #45a049;
       }
-      a {
-         color: dodgerblue;
-         text-decoration: none;
+      .form-group {
+         text-align: left;
+         font-size: 14px;
+         font-weight: 500;
+         margin-top: 10px;
       }
-      .signin {
-         background-color: #f1f1f1;
-         text-align: center;
-      }
-      @media (max-width: 800px) {
-         form {
-            width: 100%;
-            margin-left: 0px;
+      @media (max-width: 500px) {
+         .container {
+            width: 95%;
          }
       }
    </style>
 </head>
 <body>
-   <h1>PREDICT MATERNAL HEALTH STATUS</h1>
-   {% csrf_token %}
-   <form action="" method="post">
-      <label for="age"><b>Age (years)</b></label>
-      <input type="number" placeholder="Enter Age" name="age" required><br>
-      <br>
-      <label for="systolic bp"><b>Systolic Bp (mmHg)</b></label>
-      <input type="number" placeholder="Enter Systolic Bp" name="systolicBp" required><br>
-      <br>
-      <label for="diastolic bp"><b>Diastolic Bp (mmHg)</b></label>
-      <input type="number" placeholder="Enter Diastolic Bp" name="diastolicbp" required><br>
-      <br>
-      <label for="blood sugar"><b>Blood Sugar (mmol/L)</b></label>
-      <input type="number" placeholder="Enter Blood Sugar" name="bloodsugar" step=".01" required><br>
-      <br>
-      <label for="body temp"><b>Body Temp (deg F)</b></label>
-      <input type="number" placeholder="Enter Body Temp" name="bodytemp" required><br>
-      <br>
-      <label for="heart rate"><b>Heart Rate (Beats/min)</b></label>
-      <input type="number" placeholder="Enter Heart Rate" name="heartrate" required><br>
-      <br>
-      {% comment %} <!--<label for="risk level"><b>Risk Level</b></label>
-      <input type="number" placeholder="Enter Risk Level" name="risklevel" required>-->
-      <br>
-      <br>
-       {% endcomment %}
-      <button type="predict" class="predict">Predict</button>
-      <div class="predict">
-    
-        <!--<p>Already Entered? <a href="#">predict</a>.</p>-->
-      </div>
-   </form>
-   
+   <div class="container">
+      <h1>PREDICT MATERNAL HEALTH STATUS</h1>
+      <form action="" method="post">
+         {% csrf_token %}
+         <div class="form-group">
+            <label>Age (years)</label>
+            <input type="number" placeholder="Enter Age" name="age" required>
+         </div>
+         <div class="form-group">
+            <label>Systolic Bp (mmHg)</label>
+            <input type="number" placeholder="Enter Systolic Bp" name="systolicBp" required>
+         </div>
+         <div class="form-group">
+            <label>Diastolic Bp (mmHg)</label>
+            <input type="number" placeholder="Enter Diastolic Bp" name="diastolicbp" required>
+         </div>
+         <div class="form-group">
+            <label>Blood Sugar (mmol/L)</label>
+            <input type="number" placeholder="Enter Blood Sugar" name="bloodsugar" step=".01" required>
+         </div>
+         <div class="form-group">
+            <label>Body Temp (°F)</label>
+            <input type="number" placeholder="Enter Body Temp" name="bodytemp" required>
+         </div>
+         <div class="form-group">
+            <label>Heart Rate (Beats/min)</label>
+            <input type="number" placeholder="Enter Heart Rate" name="heartrate" required>
+         </div>
+         <button type="submit">Predict</button>
+      </form>
+   </div>
 </body>
 </html>
