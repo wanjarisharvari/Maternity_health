@@ -1,0 +1,53 @@
+<<<<<<< HEAD
+body
+{
+    margin: 0;
+    font-family: sans-serif;
+}
+.section{
+    background-color: #252121;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    width: 60%;
+    margin:10rem auto 0 auto;
+}
+.section img{
+    height:250px;
+}
+.section h1{
+    margin: 0;
+    color: greenyellow;
+}
+.section p{
+    color: #c0bdbd;
+    margin-right: 15px;
+}
+
+=======
+body
+{
+    margin: 0;
+    font-family: sans-serif;
+}
+.section{
+    background-color: #252121;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    width: 60%;
+    margin:10rem auto 0 auto;
+}
+.section img{
+    height:250px;
+}
+.section h1{
+    margin: 0;
+    color: greenyellow;
+}
+.section p{
+    color: #c0bdbd;
+    margin-right: 15px;
+}
+
+>>>>>>> a11790eed7f625719cfc0e61eaf34493142b95dd
