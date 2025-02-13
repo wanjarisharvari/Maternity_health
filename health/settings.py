@@ -3,13 +3,11 @@ from pathlib import Path
 #from dotenv import load_dotenv
 
 # Load environment variables from .env file
-#load_dotenv()
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Static files
-STATIC_URL = '/static/'
-#STATICFILES_DIRS = [os.path.join(STATIC_ROOT, 'static')]
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles_build")
+BASE_DIR = Path(__file__).resolve().parent.parent  # Ensure BASE_DIR is a Path object  
+
+STATIC_URL = '/static/'  
+STATIC_ROOT = BASE_DIR / 'staticfiles_build'  # Use `/` only when BASE_DIR is a Path object
 #MEDIA_URLS ='/media/'
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
