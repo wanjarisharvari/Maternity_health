@@ -22,7 +22,7 @@ ALLOWED_HOSTS = ['.vercel.app','127.0.0.1','.now.sh']
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'your-default-secret-key')
 
 # Debug mode (Turn off in production)
-DEBUG = True  
+DEBUG = False  
 
 # Allowed hosts (Update in production)
 #ALLOWED_HOSTS = ['localhost', '127.0.0.1']
