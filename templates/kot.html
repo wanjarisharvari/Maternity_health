@@ -1,30 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="Predict maternal health status based on key medical indicators.">
+   <title>Maternal Health Prediction</title>
    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
    <style>
       body {
          font-family: 'Poppins', sans-serif;
-         background-color: #f7f7f7;
+         background-color: #eef2f7;
          display: flex;
          justify-content: center;
          align-items: center;
+         flex-direction: column;
          height: 100vh;
          margin: 0;
+         padding-top: 100px; /* Increased top padding */
       }
       .container {
          background: white;
-         max-width: 400px;
+         max-width: 450px;
          width: 90%;
-         padding: 25px;
-         border-radius: 12px;
-         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+         padding: 30px;
+         border-radius: 15px;
+         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
          text-align: center;
+         margin-top: 50px; /* Added extra margin */
       }
       h1 {
-         font-size: 22px;
-         margin-bottom: 15px;
-         color: #333;
+         font-size: 24px;
+         font-weight: 600;
+         margin-bottom: 20px;
+         color: #2c3e50;
+      }
+      p {
+         font-size: 14px;
+         color: #555;
+         margin-bottom: 20px;
       }
       input[type=number] {
          width: 100%;
@@ -37,11 +50,11 @@
          transition: 0.3s;
       }
       input[type=number]:focus {
-         border-color: #4CAF50;
+         border-color: #3498db;
          outline: none;
       }
       button {
-         background-color: #4CAF50;
+         background-color: #3498db;
          color: white;
          padding: 12px;
          border: none;
@@ -52,13 +65,23 @@
          transition: 0.3s;
       }
       button:hover {
-         background-color: #45a049;
+         background-color: #2980b9;
       }
       .form-group {
          text-align: left;
          font-size: 14px;
          font-weight: 500;
          margin-top: 10px;
+      }
+      .footer {
+         font-size: 12px;
+         color: #666;
+         margin-top: 50px; /* Increased margin */
+         text-align: center;
+      }
+      .footer a {
+         color: #3498db;
+         text-decoration: none;
       }
       @media (max-width: 500px) {
          .container {
@@ -69,35 +92,40 @@
 </head>
 <body>
    <div class="container">
-      <h1>PREDICT MATERNAL HEALTH STATUS</h1>
+      <h1>🩺 Maternal Health Prediction</h1>
+      <p>Enter the required details below to assess maternal health risks based on key medical indicators.</p>
       <form action="" method="post">
          {% csrf_token %}
          <div class="form-group">
             <label>Age (years)</label>
-            <input type="number" placeholder="Enter Age" name="age" required>
+            <input type="number" placeholder="Enter Age" name="age" min="15" max="60" required>
          </div>
          <div class="form-group">
-            <label>Systolic Bp (mmHg)</label>
-            <input type="number" placeholder="Enter Systolic Bp" name="systolicBp" required>
+            <label>Systolic BP (mmHg)</label>
+            <input type="number" placeholder="Enter Systolic BP (90-180)" name="systolicBp" min="90" max="180" required>
          </div>
          <div class="form-group">
-            <label>Diastolic Bp (mmHg)</label>
-            <input type="number" placeholder="Enter Diastolic Bp" name="diastolicbp" required>
+            <label>Diastolic BP (mmHg)</label>
+            <input type="number" placeholder="Enter Diastolic BP (60-120)" name="diastolicbp" min="60" max="120" required>
          </div>
          <div class="form-group">
             <label>Blood Sugar (mmol/L)</label>
-            <input type="number" placeholder="Enter Blood Sugar" name="bloodsugar" step=".01" required>
+            <input type="number" placeholder="Enter Blood Sugar Level" name="bloodsugar" step=".01" min="3" max="20" required>
          </div>
          <div class="form-group">
             <label>Body Temp (°F)</label>
-            <input type="number" placeholder="Enter Body Temp" name="bodytemp" required>
+            <input type="number" placeholder="Enter Body Temp (95-105)" name="bodytemp" min="95" max="105" required>
          </div>
          <div class="form-group">
             <label>Heart Rate (Beats/min)</label>
-            <input type="number" placeholder="Enter Heart Rate" name="heartrate" required>
+            <input type="number" placeholder="Enter Heart Rate (60-160)" name="heartrate" min="60" max="160" required>
          </div>
-         <button type="submit">Predict</button>
+         <button type="submit">🔍 Predict</button>
       </form>
+   </div>
+
+   <div class="footer">
+      © 2025 Maternal Health Risk Predictor. Licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>.
    </div>
 </body>
 </html>
