@@ -4,7 +4,7 @@ from pathlib import Path
 
 # Load environment variables from .env file
 #load_dotenv()
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Static files
 STATIC_URL = '/static/'
@@ -19,8 +19,7 @@ ALLOWED_HOSTS = ['.vercel.app','127.0.0.1','localhost']
 #/from pathlib import Path
 
 # Use environment variable for security
-SECRET_KEY = os.getenv("SECRET_KEY") if "SECRET_KEY" in os.environ else config("SECRET_KEY")
-
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'your-default-secret-key')
 # Debug mode (Turn off in production)
 DEBUG = False  
 
