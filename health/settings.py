@@ -5,14 +5,14 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 # At the end of file. add these lines
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
-STATIC_URL = “/staticfiles/” STATICFILES_DIRS = [os.path.join(BASE_DIR, “static”)]
-MEDIA_URLS ='/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+#STATIC_URL = “/staticfiles/” STATICFILES_DIRS = [os.path.join(BASE_DIR, “static”)]
+#MEDIA_URLS ='/media/'
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Also Make aure To set allowed_hosts to '*'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.vercel.app']
 #/from pathlib import Path
 
 # Base directory
