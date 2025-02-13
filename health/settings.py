@@ -5,18 +5,17 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 # At the end of file. add these lines
 
+# Static files
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
-STATIC_URL = “/staticfiles/” STATICFILES_DIRS = [os.path.join(BASE_DIR, “static”)]
-MEDIA_URLS ='/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#MEDIA_URLS ='/media/'
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Also Make aure To set allowed_hosts to '*'
 
 ALLOWED_HOSTS = ['.vercel.app','127.0.0.1','.now.sh']
 #/from pathlib import Path
-
-# Base directory
-#BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Use environment variable for security
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'your-default-secret-key')
@@ -89,9 +88,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
-
-# Static files
-STATIC_URL = '/static/'
 
 # Default primary key type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
