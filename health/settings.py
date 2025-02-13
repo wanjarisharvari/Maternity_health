@@ -1,9 +1,10 @@
-# at the top of file
-
 import os 
 from pathlib import Path
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
-# At the end of file. add these lines
 
 # Static files
 STATIC_URL = '/static/'
@@ -14,11 +15,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 # Also Make aure To set allowed_hosts to '*'
 
-ALLOWED_HOSTS = ['.vercel.app','127.0.0.1','.now.sh']
+ALLOWED_HOSTS = ['.vercel.app','127.0.0.1','localhost']
 #/from pathlib import Path
 
 # Use environment variable for security
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'your-default-secret-key')
+SECRET_KEY = os.getenv(‘SECRET_KEY’) if “SECRET_KEY” in os.environ[“SECRET_KEY”] else config(“SECRET_KEY”)
 
 # Debug mode (Turn off in production)
 DEBUG = False  
