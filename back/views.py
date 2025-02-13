@@ -1,6 +1,5 @@
 import os
 import joblib
-import numpy as np
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
@@ -21,8 +20,8 @@ def index(request):
             bodytemp = float(request.POST.get('bodytemp', 0))
             heartrate = float(request.POST.get('heartrate', 0))
 
-            # Create input array
-            a = np.array([[age, systolicBp, diastolicbp, bloodsugar, bodytemp, heartrate]])
+            # Use a nested list instead of NumPy array
+            a = [[age, systolicBp, diastolicbp, bloodsugar, bodytemp, heartrate]]
 
             # Make prediction
             result = model.predict(a)[0]  # Get first value
