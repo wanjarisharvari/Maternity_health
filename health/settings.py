@@ -8,8 +8,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Static files
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+#STATICFILES_DIRS = [os.path.join(STATIC_ROOT, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build')
 #MEDIA_URLS ='/media/'
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
@@ -19,7 +19,7 @@ ALLOWED_HOSTS = ['.vercel.app','127.0.0.1','localhost']
 #/from pathlib import Path
 
 # Use environment variable for security
-SECRET_KEY = os.getenv(‘SECRET_KEY’) if “SECRET_KEY” in os.environ[“SECRET_KEY”] else config(“SECRET_KEY”)
+SECRET_KEY = os.getenv("SECRET_KEY") if “SECRET_KEY” in os.environ[“SECRET_KEY”] else config(“SECRET_KEY”)
 
 # Debug mode (Turn off in production)
 DEBUG = False  
