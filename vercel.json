@@ -1,16 +1,14 @@
 {
-    "builds": [
-        {
-            "src": "health/wsgi.py",
-            "use": "@vercel/python",
-            "config": { "maxLambdaSize": "15mb", "runtime": "python3.11" }
-        },
-        {
-            "src": "build_files.sh",
-            "use": "@vercel/static-build",
-            "config": { "distDir": "staticfiles_build" }
-        }
-    ],
+    "builds": [{
+        "src": "health/wsgi.py",
+        "use": "@vercel/python",
+        "config": { "maxLambdaSize": "15mb", "runtime": "python3.11" }
+    },
+    {
+        "src": "build_files.sh",
+        "use": "@vercel/static-build",
+        "config": { "distDir": "staticfiles_build" }
+    }],
     "routes": [
         {
             "src": "/static/(.*)",
@@ -20,13 +18,5 @@
             "src": "/(.*)",
             "dest": "health/wsgi.py"
         }
-    ],
-    "build": {
-        "env": {
-            "PYTHON_VERSION": "3.11"
-        },
-        "scripts": {
-            "postinstall": "pip install numpy"
-        }
-    }
-}
+    ]
+} 
